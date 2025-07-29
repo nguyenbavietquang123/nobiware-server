@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+        <AssemblyName>Spark.Mongo.R4</AssemblyName>
+        <LangVersion>latest</LangVersion>
+        <PackageId>Spark.Mongo.R4</PackageId>
+        <Product>Spark.Mongo.R4</Product>
+        <Description>MongoDB Storage Implementation for Spark</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Hl7.Fhir.R4" Version="5.11.7" />
+        <PackageReference Include="MongoDB.Driver" Version="3.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Spark.Engine\Spark.Engine.csproj" />
+    </ItemGroup>
+
+</Project>

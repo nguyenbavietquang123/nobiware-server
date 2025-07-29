@@ -1,0 +1,29 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - 'r4/master'
+  pull_request:
+
+jobs:
+  build:
+    if: github.repository == 'FirelyTeam/spark'
+
+    runs-on: ${{ matrix.platform }}
+    strategy:
+      matrix:
+        platform: [ windows-latest, ubuntu-24.04, macos-14, macos-14-large ]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+      - name: Build with dotnet
+        run: dotnet build src/Spark.Web/Spark.Web.csproj -c Release
+      - name: Unit tests
+        run: |
+          dotnet test "./src/Spark.Engine.Test/Spark.Engine.Test.csproj"
+          dotnet test "./src/Spark.Mongo.Tests/Spark.Mongo.Tests.csproj"

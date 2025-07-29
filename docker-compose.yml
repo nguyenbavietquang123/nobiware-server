@@ -1,0 +1,66 @@
+version: '3.8'  # Use 3.8 for better compatibility
+
+services:
+  keycloak:
+    build:
+      context: ./keycloak-26.2.5
+    ports:
+      - "8080:8080"
+    depends_on:
+      - keycloakdb
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://keycloakdb:5432/keycloak
+      KC_DB_USERNAME: postgres
+      KC_DB_PASSWORD: password
+
+  keycloakdb:
+    image: postgres:17
+    restart: always
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./keycloak-postgre-database/keycloak-dump:/docker-entrypoint-initdb.d/init.sql:ro
+  fhir-server:
+    build:
+      context: ./spark
+      dockerfile: src/Spark.Web/Dockerfile
+    ports:
+      - "6000:6000"
+    depends_on:
+      - mongo
+    environment:
+      - ConnectionStrings__Mongo=server=mongo;database=spark
+
+  client:
+    build:
+      context: ./FE
+    ports:
+      - "3000:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - server
+  
+  server:
+    build:
+      context: ./BE
+    ports:
+      - "5000:5000"
+  mongo:
+    build:
+      context: ./fhir-mongo-database
+    container_name: mongo-fhir
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes: 
+      - mongo_data:/data/db
+volumes:
+  postgres_data:
+  mongo_data:
