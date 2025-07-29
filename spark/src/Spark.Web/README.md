@@ -1,7 +1,7 @@
 # 🌐 Spark.Web
 
 The `Spark.Web` project is where you can modify the **FHIR server REST API**.  
-All FHIR API endpoints are defined in [`./Controller/FHIRController`](./Controller/FHIRController).
+All FHIR API endpoints are defined in [`./Controllers/FhirController`](./Controllers/FhirController.cs).
 
 ---
 
