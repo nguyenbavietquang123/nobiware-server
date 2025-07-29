@@ -1,8 +1,8 @@
-### 💾 Using an Existing Keycloak Identity Server Database
+### Using an Existing Keycloak Identity Server Database
 
-If you already have a Spark FHIR database, you can export its data and replace the contents of the `keycloak-dump` file with your exported data. 
+If you already have a **Keycloak** database, you can reuse it by exporting your data and replacing the contents of the `keycloak-dump` directory with your own export.
 
-**Important** After exported your own data, make sure to change the database owner to `postgres` to avoid permission conflicts during container startup.
+> ⚠️ **Important:**  
+> After exporting your data, make sure to set the **database owner to `postgres`** to avoid permission conflicts during container startup.
 
-
-This allows the server to start with your existing resources.
+This setup allows the Keycloak server to start with your **existing users, realms, and configurations** intact.
