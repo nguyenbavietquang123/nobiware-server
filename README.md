@@ -8,14 +8,14 @@ It includes custom components that implement the **SMART on FHIR authorization f
 ## 📄 Pre-Build Configuration
 
 Before building the project, please carefully read the `README.md` files in the following directories and follow the configuration steps:
-
-- [`spark/src/Spark.Web/README.md`](spark/src/Spark.Web/README.md)
-- [`FE/README.md`](FE/README.md)
-- [`BE/README.md`](BE/README.md)
-- [`keycloak-26.2.5/README.md`](keycloak-26.2.5/README.md)
-- [`keycloak-26.2.5/README.md`](keycloak-26.2.5/README.md)
 - [`fhir-mongo-database/README.md`](fhir-mongo-database/README.md)
 - [`keycloak-postgre-database/README.md`](keycloak-postgre-database/README.md)
+- [`spark/src/Spark.Web/README.md`](spark/src/Spark.Web/README.md)
+- [`keycloak-26.2.5/README.md`](keycloak-26.2.5/README.md)
+- [`FE/README.md`](FE/README.md)
+- [`BE/README.md`](BE/README.md)
+
+
 
 ---
 

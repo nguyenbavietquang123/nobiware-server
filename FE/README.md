@@ -6,7 +6,7 @@ This project provides the **frontend component** of the Auth Proxy, enabling sup
 
 ## ⚙️ Environment Configuration
 
-Before running the project, Go to `src/ScopeConsent/ScopeConsent.js` file and update the following variables:
+Before running the project, Go to [src/ScopeConsent/ScopeConsent.js](./src/ScopeConsent/ScopeConsent.js) file and update the following variables:
 
 + proxyAuthBaseUrl=http://your-ip-address:5000
 + authBaseUrl="http://your-ip-address:8080"
@@ -21,12 +21,12 @@ Before running the project, Go to `src/ScopeConsent/ScopeConsent.js` file and up
 | `proxyAuthBaseUrl`        | The base URL of your backend Auth Proxy                       |
 
 
-## 🔁 Customization
+## 🔁 Customization (Ignore this section if you run server on local)
 You can change these values based on your own Keycloak setup and domain:
 * If you're using your own infrastructure, update the values accordingly.
 * If you're using the provided sample data and running everything locally, you can leave the default values.
 
-## Deployment Setup (from Office Wiki):
+## Deployment Setup (from Office Wiki) (Ignore this section if you run server on local): 
 If you are following the deployment tutorial on Office Wiki, use the values below:
 + proxyAuthBaseUrl="https://my-id.server.com"
 + authBaseUrl="https://my-id.server.com"

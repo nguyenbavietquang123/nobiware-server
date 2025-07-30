@@ -11,15 +11,15 @@ Update the following fields in [`appsettings.json`](./appsettings.json):
 > **Important:**  
 > If you're running the app locally via Docker, replace all instances of `localhost` with your **host machine's IP address**.
 
-The FHIR server is integrated with **Keycloak** for authentication and authorization.  
-You can either update the environment settings to match your Keycloak setup or leave them as default for local development.
+The FHIR server is integrated with **Keycloak** for authentication and authorization. These environment variables is for this integration.  
 
 
 
 ---
 
-## 🛠 Replace with Your Own Keycloak Info
-
+## 🛠 Using Your Own Keycloak Info
+> **Important:**
+> If you have your own Keycloak server Domain and want to use it instead of the sample server please read it, otherwise ignore this section.  
 Update the following fields in [`appsettings.json`](./appsettings.json):
 
 | Setting              | Description                                      | Replace With                                                      |
@@ -37,7 +37,7 @@ Update the following fields in [`appsettings.json`](./appsettings.json):
 
 ## 📘 Example Setup (from Office Wiki Deployment Tutorial)
 
-If you're following the deployment tutorial, set the environment variables as below:
+If you're following the deployment tutorial, set the environment variables as below, otherwise ignore this section:
 
 | Setting              | Example Value                                                                 |
 |----------------------|-------------------------------------------------------------------------------|

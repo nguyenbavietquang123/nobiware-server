@@ -21,12 +21,12 @@ Before running the project, create a `.env` file in the root directory and defin
 | `PROXY_REDIRECT_URL` | The redirect URL of this proxy server (usually your frontend) |
 
 
-## 🔁 Customization
+## 🔁 Customization (Ignore this section if you run server on local)
 You can change these values based on your own Keycloak setup and domain:
 * If you're using your own infrastructure, update the values accordingly.
 * If you're using the provided sample data and running everything locally, you can leave the default values.
 
-## Deployment Setup (from Office Wiki):
+## Deployment Setup (from Office Wiki) (Ignore this section if you run server on local):
 If you are following the deployment tutorial on Office Wiki, use the values below:
 
 + KEYCLOAK_BASE_URL=https://my-id.server.com
