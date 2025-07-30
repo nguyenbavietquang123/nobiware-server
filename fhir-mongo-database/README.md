@@ -1,4 +1,5 @@
-### This is where you import the existing Spark FHIR Database by default there are sample data for testing in [dump/spark](./dump/spark/):
+### FHIR server database setup
+This is where you import the existing Spark FHIR Database by default there are sample data for testing in [dump/spark](./dump/spark/):
 
 ### Using an Existing Spark FHIR Database
 
