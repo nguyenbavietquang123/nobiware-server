@@ -1,11 +1,11 @@
-## 🔧 Project Overview
+## 1. Project Overview
 
 This repository contains the complete source code of a **FHIR server integrated with Keycloak** as the Identity Provider.  
 It includes custom components that implement the **SMART on FHIR authorization flow** and is designed to **pass the Inferno Test Suite**.
 
 ---
 
-## 📄 Pre-Build Configuration
+## 2. Pre-Build Configuration
 
 Before building the project, please carefully read the `README.md` files in the following directories and follow the configuration steps:
 - [`fhir-mongo-database/README.md`](fhir-mongo-database/README.md)
@@ -19,7 +19,7 @@ Before building the project, please carefully read the `README.md` files in the 
 
 ---
 
-## 🚀 Build & Run
+## 3. Build & Run
 
 After completing the setup, you can build and run the project using the following command:
 
@@ -27,18 +27,18 @@ After completing the setup, you can build and run the project using the followin
 docker-compose up --build
 ```
 
-## Quick Brief:
+## 4. Quick Brief:
 - KeyCloak is running on port: 8080
 - FhirServer is running on port: 6000
 - Frontend Auth Proxy is running on port: 3000
 - Backend Auth Proxy is running on port: 5000
-## API Flow for testing (all the API URL is based on the provide sample data ):
+## 5.API Flow for testing (all the API URL is based on the provide sample data ):
 
-## Step 1: Get access token with client credential flow: 
-## 📤 HTTP Request
+## 5.1  Get access token with client credential flow: 
+## 5.1.2 HTTP Request
 
 **POST** `http://<your-ip-address>:8080/realms/quang-fhir-server/protocol/openid-connect/token`
-## 🧾 Request Headers
+## 5.1.3 Request Headers
 
 | Header           | Value                         |
 |------------------|-------------------------------|
@@ -46,7 +46,7 @@ docker-compose up --build
 
 ---
 
-## 📦 Request Body Parameters
+## 5.1.4 Request Body Parameters
 
 Send the following as `x-www-form-urlencoded`:
 
@@ -59,10 +59,10 @@ Send the following as `x-www-form-urlencoded`:
 If the request is success. You will receive an access token to call FHIR server API. The access token will live only 60 second. If you want to increase 
 the life of access token. Please change it on Admin Console.
 
-## Step 2: Call FHIR APIL
-
+## 5.2: Call FHIR API
+## 5.1.1 HTTP Request
 **GET** `http://<your-ip-address>:6000/fhir/Patient`
-## Authorization: 
+## 5.2.2 Authorization: 
 
 |                |                                 |
 |----------------|-------------------------------------------|
