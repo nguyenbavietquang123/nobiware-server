@@ -32,7 +32,8 @@ docker-compose up --build
 - FhirServer is running on port: 6000
 - Frontend Auth Proxy is running on port: 3000
 - Backend Auth Proxy is running on port: 5000
-## 5.API Flow for testing (all the API URL is based on the provide sample data ):
+## 5.API Flow for testing 
+Note: All the API URL is based on the provide sample data:
 
 ## 5.1  Get access token with client credential flow: 
 ## 5.1.2 HTTP Request

@@ -1,4 +1,4 @@
-# 🛡️ Keycloak Configuration
+# 1 Keycloak Configuration
 
 To fully understand how to configure Keycloak using environment variables, refer to the official documentation:
 
@@ -6,7 +6,7 @@ To fully understand how to configure Keycloak using environment variables, refer
 
 ---
 
-## ⚙️ Customizing Keycloak 
+## 2 Customizing Keycloak 
 
 You have two options when configuring Keycloak in your setup:
 

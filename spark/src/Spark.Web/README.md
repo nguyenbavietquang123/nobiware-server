@@ -5,7 +5,7 @@ All FHIR API endpoints are defined in [`spark/src/Spark.Web/Controllers/FhirCont
 
 ---
 
-## ⚙️ Environment Configuration
+## 1 Environment Configuration
 Update the following fields in [`spark/src/Spark.Web/appsettings.json`](./appsettings.json):
 
 > **Important:**  
@@ -17,7 +17,7 @@ The FHIR server is integrated with **Keycloak** for authentication and authoriza
 
 ---
 
-## 🛠 Using Your Own Keycloak Info
+## 2 Using Your Own Keycloak Info
 > **Important:**
 > If you have your own Keycloak server Domain and want to use it instead of the sample server please read it, otherwise ignore this section.  
 Update the following fields in [`spark/src/Spark.Web/appsettings.json`](./appsettings.json):
@@ -35,7 +35,7 @@ Update the following fields in [`spark/src/Spark.Web/appsettings.json`](./appset
 
 ---
 
-## 📘 Example Setup (from Office Wiki Deployment Tutorial)
+## 3 Example Setup (from Office Wiki Deployment Tutorial)
 
 If you're following the deployment tutorial, set the environment variables as below, otherwise ignore this section:
 
