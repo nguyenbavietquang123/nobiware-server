@@ -8,8 +8,8 @@ This project provides the **frontend component** of the Auth Proxy, enabling sup
 
 Before running the project, Go to `src/ScopeConsent/ScopeConsent.js` file and update the following variables:
 
-+ proxyAuthBaseUrl=http://<your-ip-address>:5000
-+ authBaseUrl="http://<your-ip-address>:8080"
++ proxyAuthBaseUrl=http://your-ip-address:5000
++ authBaseUrl="http://your-ip-address:8080"
 + realm="quang-fhir-server"
 
 ## 🛠️ Explanation

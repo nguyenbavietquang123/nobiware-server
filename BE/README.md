@@ -8,9 +8,9 @@ This project serves as the **backend of the Auth Proxy**, designed to support th
 
 Before running the project, create a `.env` file in the root directory and define the following environment variables:
 
-+ KEYCLOAK_BASE_URL=http://<your-ip-address>:8080
++ KEYCLOAK_BASE_URL=http://your-ip-address:8080
 + REALM=quang-fhir-server
-+ PROXY_REDIRECT_URL=http://<your-ip-address>:5000
++ PROXY_REDIRECT_URL=http://your-ip-address:5000
 
 ## 🛠️ Explanation
 

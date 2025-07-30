@@ -6,18 +6,21 @@ All FHIR API endpoints are defined in [`./Controllers/FhirController`](./Control
 ---
 
 ## ⚙️ Environment Configuration
+Update the following fields in [`appsettings.json`](./appsettings.json):
+
+> **Important:**  
+> If you're running the app locally via Docker, replace all instances of `localhost` with your **host machine's IP address**.
 
 The FHIR server is integrated with **Keycloak** for authentication and authorization.  
 You can either update the environment settings to match your Keycloak setup or leave them as default for local development.
 
-> **Important:**  
-> If you're running the app locally via Docker, replace all instances of `localhost` with your **host machine's IP address**.
+
 
 ---
 
 ## 🛠 Replace with Your Own Keycloak Info
 
-Update the following fields in `appsettings.json` or `appsettings.Development.json`:
+Update the following fields in [`appsettings.json`](./appsettings.json):
 
 | Setting              | Description                                      | Replace With                                                      |
 |----------------------|--------------------------------------------------|-------------------------------------------------------------------|
