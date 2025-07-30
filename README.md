@@ -20,6 +20,8 @@ Before building the project, please carefully read the `README.md` files in the 
 ---
 
 ## 3. Build & Run
+**Important**
+> This servers are running with Docker version: 27.3.1, please using the same version or above to avoid error.
 
 After completing the setup, you can build and run the project using the following command:
 
