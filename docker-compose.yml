@@ -55,7 +55,6 @@ services:
   mongo:
     build:
       context: ./fhir-mongo-database
-    container_name: mongo-fhir
     restart: always
     ports:
       - "27017:27017"
