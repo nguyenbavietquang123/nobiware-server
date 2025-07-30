@@ -1,12 +1,12 @@
 # 🌐 Spark.Web
 
 The `Spark.Web` project is where you can modify the **FHIR server REST API**.  
-All FHIR API endpoints are defined in [`./Controllers/FhirController`](./Controllers/FhirController.cs).
+All FHIR API endpoints are defined in [`spark/src/Spark.Web/Controllers/FhirController`](./Controllers/FhirController.cs).
 
 ---
 
 ## ⚙️ Environment Configuration
-Update the following fields in [`appsettings.json`](./appsettings.json):
+Update the following fields in [`spark/src/Spark.Web/appsettings.json`](./appsettings.json):
 
 > **Important:**  
 > If you're running the app locally via Docker, replace all instances of `localhost` with your **host machine's IP address**.
@@ -20,7 +20,7 @@ The FHIR server is integrated with **Keycloak** for authentication and authoriza
 ## 🛠 Using Your Own Keycloak Info
 > **Important:**
 > If you have your own Keycloak server Domain and want to use it instead of the sample server please read it, otherwise ignore this section.  
-Update the following fields in [`appsettings.json`](./appsettings.json):
+Update the following fields in [`spark/src/Spark.Web/appsettings.json`](./appsettings.json):
 
 | Setting              | Description                                      | Replace With                                                      |
 |----------------------|--------------------------------------------------|-------------------------------------------------------------------|
