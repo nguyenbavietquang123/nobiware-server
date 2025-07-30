@@ -13,6 +13,9 @@ Before building the project, please carefully read the `README.md` files in the 
 - [`FE/README.md`](FE/README.md)
 - [`BE/README.md`](BE/README.md)
 - [`keycloak-26.2.5/README.md`](keycloak-26.2.5/README.md)
+- [`keycloak-26.2.5/README.md`](keycloak-26.2.5/README.md)
+- [`fhir-mongo-database/README.md`](fhir-mongo-database/README.md)
+- [`keycloak-postgre-database/README.md`](keycloak-postgre-database/README.md)
 
 ---
 
