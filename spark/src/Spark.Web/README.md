@@ -1,6 +1,6 @@
 # 🌐 Spark.Web
 
-The `Spark.Web` project is where you can modify the **FHIR server REST API**.  
+  
 > The `Spark.Web` project is where you can modify the **FHIR server REST API**.  
 > 
 > All FHIR API endpoints are defined in [spark/src/Spark.Web/Controllers/FhirController](spark/src/Spark.Web/Controllers/FhirController).  
@@ -8,7 +8,7 @@ The `Spark.Web` project is where you can modify the **FHIR server REST API**.
 
 ---
 
-### Available API Examples:
+> Available API Examples:
 
 - `GET /fhir/Patient/{id}` — Retrieve a patient by ID  
 - `POST /fhir/Observation` — Create a new observation  

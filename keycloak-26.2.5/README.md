@@ -1,4 +1,4 @@
-# 1 Keycloak Configuration
+## 1 Keycloak Configuration
 
 To fully understand how to configure Keycloak using environment variables, refer to the official documentation:
 
