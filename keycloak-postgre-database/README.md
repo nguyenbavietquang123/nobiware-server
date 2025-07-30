@@ -1,4 +1,5 @@
-### This is where you import the existing Keycloak Database by default there are sample data for testing in [keycloak-dump](./keycloak-dump):
+### Keycloak database setup
+This is where you import the existing Keycloak Database by default there are sample data for testing in [keycloak-dump](./keycloak-dump):
 
 ### Using an Existing Keycloak Identity Server Database
 
