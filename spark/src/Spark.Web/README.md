@@ -25,7 +25,7 @@ The `Spark.Web` project is where you can modify the **FHIR server REST API**.
 Update the following fields in [`spark/src/Spark.Web/appsettings.json`](./appsettings.json):
 
 > **Important:**  
-> If you're running the app locally via Docker, replace all instances of `localhost` with your **host machine's IP address**.
+> If you're running the app locally via Docker, replace all instances of `localhost` with your **host machine's IP address (ethernet IP)**.
 
 The FHIR server is integrated with **Keycloak** for authentication and authorization. These environment variables is for this integration.  
 
