@@ -28,10 +28,10 @@ docker-compose up --build
 ```
 
 ## Quick Brief:
-KeyCloak is running on port: 8080
-FhirServer is running on port: 6000
-Frontend Auth Proxy is running on port: 3000
-Backend Auth Proxy is running on port: 5000
+- KeyCloak is running on port: 8080
+- FhirServer is running on port: 6000
+- Frontend Auth Proxy is running on port: 3000
+- Backend Auth Proxy is running on port: 5000
 ## API Flow for testing (all the API URL is based on the provide sample data ):
 
 ## Step 1: Get access token with client credential flow: 
