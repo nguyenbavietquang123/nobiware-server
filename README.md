@@ -60,7 +60,7 @@ If the request is success. You will receive an access token to call FHIR server 
 the life of access token. Please change it on Admin Console.
 
 ## 5.2: Call FHIR API
-## 5.1.1 HTTP Request
+## 5.2.1 HTTP Request
 **GET** `http://<your-ip-address>:6000/fhir/Patient`
 ## 5.2.2 Authorization: 
 
