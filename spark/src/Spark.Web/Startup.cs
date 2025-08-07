@@ -34,6 +34,7 @@ using System;
 using System.Net.Http;
 using Spark.Web.Models;
 using Spark.Web.Utilities;
+using StackExchange.Redis;
 
 namespace Spark.Web;
 
@@ -66,7 +67,7 @@ public class Startup
         // Configuration.GetSection("Introspection", introspectSettings);
         // services.AddSingleton<IntrospectSettings>(introspectSettings);
         services.Configure<IntrospectSettings>(Configuration.GetSection("Introspection"));
-
+        services.Configure<FhirAuthOptions>(Configuration.GetSection("FhirAuth"));
         StoreSettings storeSettings = new StoreSettings();
         Configuration.Bind("StoreSettings", storeSettings);
         //Console.WriteLine("⚙️ MongoDB Connection String: " + storeSettings.ConnectionString);
@@ -95,7 +96,7 @@ public class Startup
         // services.AddDbContext<ApplicationDbContext>(options =>
         //     options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"))
         // );
-        
+
         // Add Identity management
         // services.AddIdentity<IdentityUser, IdentityRole>()
         //     .AddRoles<IdentityRole>()
@@ -115,6 +116,10 @@ public class Startup
         //                 ValidateIssuerSigningKey = true
         //             };
         //         });
+        services.AddScoped<IRedisBlacklistService, RedisBlacklistService>();
+        services.AddScoped<FhirAuth>();
+        services.AddSingleton<IConnectionMultiplexer>(sp =>
+        ConnectionMultiplexer.Connect($"{Configuration["Redis:Ip"]}:{Configuration["Redis:Port"]}"));
         services.AddAuthentication(options =>
         {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -156,7 +161,11 @@ public class Startup
         services.AddFhir(sparkSettings);
 
         services.AddTransient<ServerMetadata>();
-
+        services.AddSingleton<IRedisBlacklistService, RedisBlacklistService>();
+        services.AddHttpClient<FhirAuth>(client =>
+        {
+            client.BaseAddress = new Uri("https://id-dev.nobiware.com");
+        });
         // AddMvc needs to be called since we are using a Home page that is reliant on the full MVC framework
         services.AddMvc(options =>
         {

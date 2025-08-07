@@ -44,14 +44,16 @@ public class FhirController : ControllerBase
     private readonly IntrospectSettings _introspectSettings;
     private readonly ILogger<FhirController> _logger;
     private readonly IConfiguration _configuration;
+    private readonly FhirAuth _fhirAuth;
 
-    public FhirController(IFhirService fhirService, SparkSettings settings, IOptions<IntrospectSettings> introspectSettings, ILogger<FhirController> logger, IConfiguration configuration)
+    public FhirController(IFhirService fhirService, SparkSettings settings, IOptions<IntrospectSettings> introspectSettings, ILogger<FhirController> logger, IConfiguration configuration, FhirAuth fhirAuth)
     {
         _fhirService = fhirService ?? throw new ArgumentNullException(nameof(fhirService));
         _settings = settings ?? throw new ArgumentNullException(nameof(settings));
         _introspectSettings = introspectSettings.Value;
         _logger = logger;
         _configuration = configuration;
+        _fhirAuth = fhirAuth;
     }
     private async Task<FhirResponse?> CheckSearchPermissionAsync(string type)
     {

@@ -13,6 +13,8 @@ services:
       KC_DB_URL: jdbc:postgresql://keycloakdb:5432/keycloak
       KC_DB_USERNAME: postgres
       KC_DB_PASSWORD: password
+    networks:
+      - nobiware-net
 
   keycloakdb:
     image: postgres:17
@@ -24,6 +26,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./keycloak-postgre-database/keycloak-dump:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - nobiware-net
+
   fhir-server:
     build:
       context: ./spark
@@ -34,6 +39,8 @@ services:
       - mongo
     environment:
       - ConnectionStrings__Mongo=server=mongo;database=spark
+    networks:
+      - nobiware-net
 
   client:
     build:
@@ -44,20 +51,43 @@ services:
       - CHOKIDAR_USEPOLLING=true
     depends_on:
       - server
-  
+    networks:
+      - nobiware-net
+
   server:
     build:
       context: ./BE
     ports:
       - "5000:5000"
+    networks:
+      - nobiware-net
+
+  redis:
+    image: redis:7.4
+    ports:
+      - "6379:6379"
+    restart: always
+    volumes:
+      - redis_data:/data
+    networks:
+      - nobiware-net
+
   mongo:
     build:
       context: ./fhir-mongo-database
     restart: always
     ports:
       - "27017:27017"
-    volumes: 
+    volumes:
       - mongo_data:/data/db
+    networks:
+      - nobiware-net
+
 volumes:
   postgres_data:
   mongo_data:
+  redis_data:
+
+networks:
+  nobiware-net:
+    driver: bridge
